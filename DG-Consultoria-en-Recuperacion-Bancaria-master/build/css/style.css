@@ -1,0 +1,1738 @@
+
+/* Ajustes generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    background: linear-gradient(to bottom, #ede2d8 85%, #051d40 100%);
+    background-size: cover;
+    color: #202122;
+}
+* {
+    font-size: inherit; /* Fuerza que todos los elementos hereden el tamaño del body */
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 3.5rem;
+    color: #7c004c;
+    text-align: center;
+}
+
+/* Hover opcional */
+h1:hover {
+    color: #9e0066;
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+}
+
+
+
+
+/* Contenedor general */
+.seccion.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Contenedor del nav en la parte inferior derecha */
+.nav-container {
+    position: absolute;
+    bottom: 10px; /* Ubicación en la parte inferior */
+    right: 10px; /* Alineación a la derecha */
+    transform: translateY(20px); /* Baja el contenedor 20px más */
+    z-index: 10; /* Asegura que esté encima del contenido */
+    padding: 15px; /* Espaciado interno */
+    display: flex;
+    justify-content: center; /* Centra el contenido */
+}
+
+/* Estilo del nav */
+.nav-container .desktop-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaciado entre enlaces */
+}
+
+
+/* Hover sobre los enlaces */
+.nav-container .desktop-nav a:hover {
+    background-color: rgba(255, 187, 54, 0.3); /* Fondo naranja translúcido al pasar el cursor */
+    color: black; /* Mantiene el texto blanco */
+}
+
+
+.nav-container .desktop-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    transition: all 0.4s ease;
+}
+
+/* 🌈 Efecto al pasar el mouse */
+.nav-container .desktop-nav a:hover {
+    background: linear-gradient(to bottom, 
+        #4d001f 0%,   /* vino oscuro arriba */
+        #a35d84 60%,  /* vino claro al centro */
+        #c0bfc0 100%  /* gris metálico suave abajo */
+    );
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+}
+main a.boton {
+    display: inline-block;
+    background-color: #4d001f;
+    color: #fff;
+    padding: 12px 26px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    border: 2px solid #320015;
+    transition: 0.3s ease;
+}
+
+main a.boton:hover {
+    background-color: #70002e; /* un vino más claro para el hover */
+    transform: scale(1.05);
+}
+
+
+/* Header */
+header {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.header-content {
+    position: relative;
+    text-align: center;
+    color: black;
+    margin-top: 20vh;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+ h2, h3,p {
+   color: black;
+}
+
+/* Navegación */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navegacion a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+  background: linear-gradient(180deg, #000000 0%, #4d4d4d 40%, #bfbfbf 100%);
+
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navegacion a:hover {
+    background-color: #7c004c;
+}
+
+/* Efecto hover específico para la clase 'have-seguridad' */
+.have-seguridad img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.have-seguridad img:hover {
+    transform: scale(1.1); /* Escala la imagen un 10% más grande */
+}
+
+/* Estilo para la imagen con efecto de movimiento */
+.imagen-preguntas {
+    max-width: 250px; /* limita el ancho máximo */
+    width: 100%;       /* se adapta a contenedor */
+    height: auto;      /* mantiene proporción */
+    display: block;
+    margin: 0 auto;    /* centra la imagen */
+}
+
+.imagen-preguntas {
+    max-width: 250px; /* un poquito más grande */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* sombra un poco más marcada */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efecto al pasar el cursor (escritorio) */
+.imagen-preguntas:hover {
+    transform: translateY(-6px) scale(1.08); /* más grande pero suave */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* sombra más destacada */
+}
+
+/* Efecto al tocar (móvil) */
+.imagen-preguntas:active,
+.imagen-preguntas.touch-active {
+    transform: translateY(-4px) scale(1.05); /* movimiento más sutil */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Efecto al tocar (móvil) */
+.imagen-preguntas:active,
+.imagen-preguntas.touch-active {
+    transform: translateY(-3px) scale(1.03); /* movimiento más suave */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 480px) {
+    .imagen-preguntas {
+        width: 90%; /* Ajusta el tamaño de la imagen al 90% en pantallas pequeñas */
+    }
+}
+
+/* Ajustes en pantallas más grandes */
+@media (min-width: 768px) {
+    .imagen-preguntas {
+        width: 60%; /* Ajusta el tamaño al 60% en pantallas medianas */
+    }
+}
+
+/* Ajuste máximo en pantallas grandes */
+@media (min-width: 1024px) {
+    .imagen-preguntas {
+        width: 50%; /* Ajusta el tamaño de la imagen en pantallas grandes */
+    }
+}
+
+
+   
+
+/* aqu va la parte de  etapas: Litigio, Adjudicadas y con Posesión, disponibles en todo el país.*/
+
+/* MARQUESINA */
+/* =========================================================
+   🔥 MARQUESINAS UNIFICADAS (REMATE + PREGUNTAS)
+   ========================================================= */
+
+.marquesina-contenedor,
+.marquesina-remate {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* 🔥 MISMA ANIMACIÓN PARA AMBAS */
+.marquesina-texto,
+.marquesina-remate span {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: bold;
+    padding-right: 60px; /* espacio entre repeticiones */
+    animation: marquesina-lineal 12s linear infinite;
+    position: relative;
+    color: #000;
+}
+
+/* 🔥 DUPLICA AUTOMÁTICAMENTE EL TEXTO SIN TOCAR EL HTML */
+.marquesina-texto::after,
+.marquesina-remate span::after {
+    content: attr(data-text);
+    padding-left: 60px; 
+}
+/* TEXTO CORTO — MÁS RÁPIDO */
+.marquesina-texto {
+    animation-duration: 8s !important;
+}
+
+/* REMATE — MÁS LENTO */
+.marquesina-remate span {
+    animation-duration: 12s !important;
+}
+.marquesina-texto,
+.marquesina-remate span {
+    font-size: 1.8rem !important; /* Ajusta el tamaño aquí */
+}
+
+/* 🔥 ANIMACIÓN SIN ESPACIOS VACÍOS */
+@keyframes marquesina-lineal {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* =========================================================
+   📱 RESPONSIVE TABLET
+   ========================================================= */
+@media (max-width: 768px) {
+
+    .marquesina-texto,
+    .marquesina-remate span {
+        font-size: 1rem;
+        animation-duration: 16s; /* un poco más lento en tablet */
+    }
+}
+
+/* =========================================================
+   📱 RESPONSIVE CELULAR
+   ========================================================= */
+@media (max-width: 480px) {
+
+    .marquesina-texto,
+    .marquesina-remate span {
+        font-size: 0.95rem;
+        animation-duration: 18s; /* aún más lento para leer bien */
+    }
+}
+
+/* =========================================================
+   🔥 BOTÓN LEER MÁS FIJO
+   ========================================================= */
+
+
+@media (max-width: 480px) {
+    .leer-mas-fijo {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .leer-mas-fijo {
+        padding: 9px 15px;
+        font-size: 1rem;
+    }
+}
+
+/* CENTRAR TODOS LOS BOTONES .leer-mas-fijo */
+.leer-mas-fijo {
+    display: block !important;
+    width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 12px !important;
+
+    padding: 10px 16px !important;
+    background: #7c004c !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+
+    /* ELIMINA cualquier regla vieja que lo empuje */
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+}
+/* Anuncios */
+/* ======== CONTENEDOR DE INMUEBLES24 (GRID REAL) ======== */
+
+.contenedor-anuncios {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.contenedor-anuncios img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.contenido-anuncio h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contenido-anuncio p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.contenido-anuncio .precio {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 🔧 Alineación uniforme para las tarjetas de propiedades */
+.contenedor-anuncios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.anuncio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 calc(33% - 20px);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f8f4ef;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto; /* ✅ Ajusta la altura automáticamente */
+  overflow: visible; /* ✅ Evita que se corte el botón o el texto */
+  min-height: fit-content; /* ✅ Garantiza que crezca según el contenido */
+}
+
+/* Ajusta las imágenes para que todas tengan la misma proporción */
+.anuncio picture img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover; /* recorta sin deformar */
+}
+
+/* Contenido interno alineado */
+.contenido-anuncio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* El botón siempre al final */
+.contenido-anuncio a {
+  margin-top: auto;
+  background-color: #7c004c;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.contenido-anuncio a:hover {
+  background-color: #7c004c;
+}
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contenedor-anuncios {
+        display: flex;
+        flex-direction: column; /* Tarjetas en fila */
+        gap: 20px;
+    }
+
+    .contenido-anuncio h3, .contenido-anuncio p, .contenido-anuncio .precio {
+        text-align: left; /* Ajuste opcional */
+    }
+}                       
+.flip-card-back .img-back {
+    max-height: 130px;
+    width: auto;
+    margin-bottom: 10px;
+}
+/* Responsividad */
+@media (max-width: 768px) {
+
+    .contenedor-anuncios {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    /* 🔥 CENTRAR TODO EL TEXTO EN MÓVIL */
+    .contenido-anuncio {
+        text-align: center;
+    }
+
+    .contenido-anuncio h3,
+    .contenido-anuncio p,
+    .contenido-anuncio .precio,
+    .contenido-anuncio ul {
+        text-align: center;
+    }
+
+    /* Centrar iconos */
+    .iconos-caracteristicas {
+        justify-content: center;
+    }
+}
+/* 🔥 Responsive del botón (para que NO se corte) */
+@media (max-width: 768px) {
+
+    .boton-amarillo-block {
+        display: block;
+        width: 100%;              /* Que abarque todo el ancho disponible */
+        max-width: 260px;         /* Evita que se estire demasiado */
+        margin: 20px auto 0;      /* Centrado y con espacio hacia arriba */
+        padding: 14px 20px;       /* Más área clickeable */
+        text-align: center;       /* Centra el texto dentro del botón */
+        white-space: normal;      /* Permite que el texto del botón salte de línea */
+    }
+}
+
+
+/* Footer */
+
+
+/* Menú Móvil */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(13, 32, 59, 0.95);
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu .close-icon {
+    font-size: 20px;
+    align-self: flex-end;
+    cursor: pointer;
+    padding: 20px;
+}
+.mobile-menu {
+    background: linear-gradient(to bottom, 
+        rgba(124, 0, 76, 0.95) 0%,   /* Vino fuerte arriba */
+        rgba(100, 80, 100, 0.9) 50%, /* Transición suave */
+        rgba(70, 70, 70, 0.9) 100%   /* Gris oscuro metálico abajo */
+    );
+    backdrop-filter: blur(8px); /* Efecto vidrio suave */
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+}
+
+.mobile-nav a {
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    color: #f5e9df; /* Beige claro en hover */
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header .menu-icon {
+        display: block;
+    }
+
+    header .desktop-nav {
+        display: none;
+    }
+
+    .nav-container {
+        display: none;
+    }
+
+    .header-content {
+        align-items: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .navegacion {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navegacion a {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+/* Estilo del botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px; /* Espaciado desde abajo */
+    right: 100px; /* Ajuste de posición para evitar superposición */
+    z-index: 1001; /* Asegurar que esté sobre otros elementos */
+    width: 60px; /* Tamaño del botón */
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%; /* Forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: float-whatsapp 2s infinite;
+    cursor: pointer;
+}
+
+/* Ícono de WhatsApp */
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Animación flotante específica de WhatsApp */
+@keyframes float-whatsapp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Botón flotante del formulario */
+.formulario-float {
+    position: fixed;
+    bottom: 20px;
+    right: 90px; /* Ajuste para evitar superposición */
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #7c004c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: float-formulario 2s infinite;
+    cursor: pointer;
+}
+
+/* Ícono del formulario */
+.formulario-float img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Animación flotante específica del formulario */
+@keyframes float-formulario {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Botón flotante para llamadas */
+.llamar-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Ajuste de posición */
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: float-llamar 2s infinite;
+    cursor: pointer;
+}
+
+/* Ícono de llamada */
+.llamar-float img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Animación flotante específica para llamada */
+@keyframes float-llamar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.navegacion-float {
+    position: fixed;
+    bottom: 20px; /* Ajusta según tu diseño */
+    padding: 10px;
+    background-color: #ede2d8; /* Fondo azul */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 9999;
+}
+
+.navegacion-float img {
+    width: 24px;
+    height: 24px;
+}
+
+.atras-float {
+   left: 80px; /* Posición a la izquierda del botón principal */
+}
+
+.adelante-float {
+   left: 20px; /* Posición a la derecha */
+}
+
+.navegacion-float:hover {
+    background-color: #ede2d8; /* Azul más oscuro en hover */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* 🎨 Fondo general y estilo base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px; /* Tamaño uniforme para todo el texto */
+    background:
+        linear-gradient(to bottom, #f5e9df 95%, #580939 100%), /* beige → magenta */
+        url('../img/fondomagentabeige.svg') no-repeat center center fixed;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+/* -------------------------------------------------------------
+   🔹 Este bloque define el diseño visual del fondo principal,
+   incluyendo el degradado beige → magenta y la imagen SVG.
+   Se aplica desde la parte superior hasta el footer de la página.
+-------------------------------------------------------------- */
+
+/* 🔸 Estilo del título principal */
+h1 {
+    color: black; 
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    font-size: 2.4rem; /* Aumentado desde el tamaño por defecto */
+    font-weight: 800;  /* Más grueso para resaltar */
+    letter-spacing: 0.5px; /* Separación sutil entre letras */
+    margin-bottom: 25px; /* Espacio debajo del título */
+    text-align: center; /* Centrado visualmente */
+}
+
+/* 🔸 Estilo del botón principal */
+.boton-azul-claro {
+    display: inline-block;
+    background: linear-gradient(to right, #d86ea3, #7c004c);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.boton-azul-claro:hover {
+    background: linear-gradient(to right, #7c004c, #d86ea3);
+}
+
+.formulario legend,
+.formulario label {
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+.seccion.contenedor b {
+    color: black !important;
+}
+
+
+blockquote {
+    color: black;           /* 🔹 Hace el texto negro */
+    font-style: italic;     /* Opcional: mantiene el estilo de cita */
+    background-color: #f5e9df; /* Opcional: fondo claro */
+    border-left: 4px solid #7c004c; /* Opcional: línea lateral vino */
+    padding: 10px 20px;
+}
+
+/* Centrado completo solo para la secciónde la pestaña de seguridad */
+.contenido-centrado .entrada-blog {
+    text-align: center;         /* Centra todo el texto dentro del artículo */
+    margin-bottom: 40px;        /* Espacio entre artículos */
+}
+
+/* Centrar y uniformar las imágenes */
+.contenido-centrado .entrada-blog .imagen picture,
+.contenido-centrado .entrada-blog .imagen img {
+    display: block;
+    margin: 0 auto 15px auto;   /* Centra horizontalmente y agrega espacio abajo */
+    width: 320px;               /* Tamaño uniforme */
+    height: 220px;
+    object-fit: cover;          /* Evita distorsión */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Centrar también los enlaces “Leer más” */
+.contenido-centrado .entrada-blog .enlace-leer-mas {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px; /* CAQUI TERMINA LA PARTE DE SEGURIDAD */
+}
+
+/* 🎯 Contenedor principal de testimoniales  ESTO SOLO ES PARA LA PESTAÑA DE TESTIMONIALES TODO LO OQUE DICE TESTIMONIOS*/
+.contenedor .testimoniales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;     /* Centra horizontalmente */
+    align-items: stretch;        /* 🔹 Hace que TODAS las tarjetas tengan la misma altura */
+    gap: 40px;                   /* Espacio entre ellas */
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 🎨 Tarjetas de testimonio */
+.testimoniales .testimonial {
+    flex: 1 1 300px;             /* Cada tarjeta ocupa mínimo 300px, pero se adapta */
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;      /* 🔹 Permite alinear los elementos verticalmente */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5e9df;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🌈 Efecto hover */
+.testimoniales .testimonial:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* 🖼️ Imagen circular centrada */
+.testimoniales .testimonial .imagen img {
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 💬 Cita */
+.testimoniales .testimonial blockquote {
+    flex-grow: 1;                /* 🔹 Hace que todas crezcan igual y mantengan altura */
+    color: black;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    background: #ffffff;
+    border-left: 4px solid #7c004c;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    max-width: 90%;
+}
+
+/* 👤 Nombre */
+.testimoniales .testimonial .nombre {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 8px; /* 🔹 AQUI TERMINA TESTIMONIOS */
+}
+
+/* AQUI INICIA TARJETAS DE INDEX.HTML */
+
+/* Contenedor de razones con disposición horizontal */
+.contenedor-razones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Tarjeta con proporciones similares a los testimoniales */
+.contenedor-razones .tarjeta {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: #f5e9df;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Imágenes más grandes y centradas */
+.contenedor-razones .tarjeta img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+.contenedor-razones .tarjeta img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Títulos y texto */
+.contenedor-razones .contenido-tarjeta h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0d203b;
+    margin-bottom: 10px;
+}
+
+.contenedor-razones .contenido-tarjeta p {
+    font-size: 1rem;
+    color: black;
+    line-height: 1.6;
+    margin: 0 15px 10px 15px;
+}
+
+/* Vista móvil */
+@media (max-width: 768px) {
+    .contenedor-razones {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .contenedor-razones .tarjeta {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+.contenedor-razones .tarjeta .boton-razones {
+    display: inline-block;
+    background-color: #7c004c; /* color que quieres */
+    color: #ede2d8; /* beige claro del body */
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover */
+.contenedor-razones .tarjeta .boton-razones:hover {
+    background-color: #a20063; /* mismo color pero más claro para el hover */
+    transform: scale(1.04);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Active (presionado) */
+.contenedor-razones .tarjeta .boton-razones:active {
+    transform: scale(0.97);
+}
+
+/*responsive nuevo de razones checar si sirve borrar el de arriba */
+/* CONTENEDOR GENERAL */
+.contenedor-razones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+/* TARJETA — CONTENEDOR */
+.flip-razones {
+    width: 100%;
+    height: 430px; /* IMPORTANTE: altura fija */
+    perspective: 1000px; /* NECESARIO PARA EL GIRO */
+    position: relative;
+}
+
+/* CONTENEDOR INTERNO QUE GIRA */
+.flip-razones-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .8s ease;
+    transform-style: preserve-3d;
+}
+
+/* CUANDO SE ACTIVA EL FLIP */
+.flip-razones.activa .flip-razones-inner {
+    transform: rotateY(180deg);
+}
+
+/* CARAS (frente y atrás) */
+.flip-razones-front,
+.flip-razones-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* NECESARIO */
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Parte trasera */
+.flip-razones-back {
+    transform: rotateY(180deg);
+}
+
+/* IMÁGENES */
+.flip-razones-front img,
+.flip-razones-back img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin: 0 auto;
+}
+
+/* BOTONES */
+.boton-razones {
+    background: #7a004e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-volver-razon {
+    margin-top: 15px;
+    background: #444;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+.contenedor-razones .tarjeta:nth-child(4) {
+    grid-column: 2;  /* LA COLOCA EXACTAMENTE EN LA COLUMNA CENTRAL */
+}
+
+/* 📱📲 RESPONSIVE — 1 por fila SIEMPRE */
+@media (max-width: 992px) {
+    .contenedor-razones {
+        grid-template-columns: 1fr !important; /* SOLO UNA COLUMNA */
+        justify-items: center; /* Centra cada tarjeta */
+    }
+
+    /* Quitamos el centrado especial de la 4ta */
+    .contenedor-razones .tarjeta:nth-child(4) {
+        grid-column: auto !important;
+    }
+}
+
+
+.modelo-badge {
+    display: inline-block;
+    background-color: #EFE6F3;
+    color: #5A0A3A;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.desc {
+    font-size: 14px;
+    line-height: 1.35;
+    color: #555;
+    margin-top: 5px;
+}
+
+
+/* 🔹 Hace que los iconos de características se alineen horizontalmente */
+.iconos-caracteristicas {
+    display: flex;              /* Los coloca en fila */
+    justify-content: center;    /* Centra la fila */
+    align-items: center;        /* Alinea verticalmente */
+    gap: 20px;                  /* Espacio entre cada icono */
+    list-style: none;           /* Quita los puntos de lista */
+    padding: 0;                 /* Elimina margen interno */
+    margin: 15px 0;             /* Separación superior e inferior */
+}
+
+.iconos-caracteristicas li {
+    display: flex;
+    flex-direction: column;     /* Ícono arriba, número abajo */
+    align-items: center;        /* Centra el ícono y número */
+    color: black;
+    font-weight: bold;
+}
+
+.iconos-caracteristicas img.icono {
+    width: 40px;                /* Tamaño de los iconos */
+    height: 40px;
+    margin-bottom: 5px;         /* Espacio entre ícono y número */
+}
+/* 🔹 Centra el texto de la etapa (por ejemplo: "Etapa sentencia firme") */
+.contenido-anuncio p strong,
+.contenido-anuncio b {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* 🔹 Contenedor general */
+.cesiones-recientes {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* 🔹 Título (ahora en negro) */
+.titulo-cesiones {
+    font-size: 1.8rem;
+    color: black; /* cambiado de #7c004c a negro */
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* 🔹 Galería ordenada */
+.galeria-cesiones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas arriba */
+    grid-template-rows: auto auto; /* 2 filas */
+    gap: 25px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* 🔸 Imagen inferior centrada */
+.galeria-cesiones img:nth-child(3) {
+    grid-column: 1 / span 2;
+    justify-self: center;
+}
+
+/* 🔸 Estilo visual de las imágenes (más chicas) */
+.galeria-cesiones img {
+    width: 80%; /* reducido de 90% */
+    max-width: 380px; /* antes 450px */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🌈 Efecto hover */
+.galeria-cesiones img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 📱 Responsivo (una debajo de otra en móviles) */
+@media (max-width: 768px) {
+    .galeria-cesiones {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+    }
+
+    .galeria-cesiones img:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .galeria-cesiones img {
+        width: 85%;
+        max-width: 320px; /* más pequeñas en móvil */
+    }
+}
+/* 🎥 Video principal */
+.video-contacto {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 70px; /* 🔹 espacio debajo del header */
+}
+
+.video-contacto .video-fondo {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* 💬 Texto debajo del video */
+.texto-contacto {
+  width: 95%;
+  max-width: 900px;
+  margin: 20px auto 60px;
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.texto-contacto h2 {
+  font-size: clamp(1rem, 2.8vw, 1.3rem);
+  margin: 10px 0;
+}
+
+/* 📱 Ajuste en pantallas medianas */
+@media (max-width: 768px) {
+  .video-contacto {
+    margin-top: 60px;
+  }
+
+  .video-contacto .video-fondo {
+    max-height: 280px;
+  }
+
+  .texto-contacto {
+    margin: 15px auto 40px;
+  }
+
+  .texto-contacto h2 {
+    font-size: 1rem;
+  }
+}
+
+/* 📱 Ajuste en móviles pequeños */
+@media (max-width: 480px) {
+  .video-contacto {
+    margin-top: 50px;
+  }
+
+  .video-contacto .video-fondo {
+    max-height: 220px;
+  }
+
+  .texto-contacto h2 {
+    font-size: 0.9rem;
+  }
+}
+
+/* 🎯 AJUSTES RESPONSIVOS SOLO PARA LA PÁGINA DE PROFECO */
+
+/* 🏷️ Título principal */
+.resumen-propiedad h2 {
+  text-align: center;
+  color: #7c004c;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* 📸 Imagen de PROFECO */
+.resumen-propiedad picture img,
+.contenedor picture img {
+  display: block;
+  margin: 0 auto 25px auto;
+  width: 80%;              /* 🔹 más pequeña y centrada */
+  max-width: 700px;        /* 🔹 límite para pantallas grandes */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  object-fit: contain;
+}
+
+/* 📄 Texto general */
+.resumen-propiedad {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  text-align: justify;
+  color: #202122;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 📱 TABLETS */
+@media (max-width: 768px) {
+  .resumen-propiedad picture img {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .resumen-propiedad {
+    width: 94%;
+    font-size: 0.95rem;
+  }
+
+  .resumen-propiedad h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* 📱 CELULARES */
+@media (max-width: 480px) {
+  .resumen-propiedad picture img {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .resumen-propiedad {
+    width: 92%;
+    font-size: 0.9rem;
+    text-align: left; /* 🔹 lectura natural */
+  }
+
+  .resumen-propiedad h2 {
+    font-size: 1.05rem;
+  }
+}
+/* 🔹 CONTENEDOR DE LAS TARJETAS */
+.contenedor-anuncios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1000px; /* 🔹 tamaño justo para dos arriba */
+  margin: 0 auto;
+}
+
+/* 🔹 TARJETAS */
+.anuncio {
+  flex: 0 1 calc(50% - 20px); /* 🔹 dos arriba */
+  max-width: 420px;
+  min-width: 320px;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #fffaf6;
+  border: 1px solid #e2d7d2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.anuncio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Imagen panorámica */
+.anuncio picture img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+ 
+
+
+/* ===== Estilos para el campo de mensaje ===== */
+#mensaje {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* ===== Estilo para el label del mensaje ===== */
+label[for="mensaje"] {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* =============================
+   aqui va el circulo que da vuelta
+============================= *
+/* =========================================================
+   REMATES – CSS LIMPIO, CORREGIDO Y ORDENADO
+   ========================================================= */
+/* =========================================================
+   REMATES – CSS LIMPIO, CORREGIDO Y ORDENADO
+   ========================================================= */
+/* ===============================
+
+/* =============================
+   GENERAL FOOTER STYLES
+============================= */
+footer {
+    background-color: transparent;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+}
+
+footer .navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+footer .navegacion a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+footer .navegacion a:hover {
+    background-color: rgba(255, 187, 54, 0.3);
+}
+
+/* =============================
+   VIDEO RESPONSIVE
+============================= */
+.footer-content {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.footer-content video {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: cover;
+}
+
+/* =============================
+   TEXTO SOBRE EL VIDEO
+============================= */
+.texto-video {
+    position: absolute;
+    top: 20px;
+    left: 50% !important;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+    color: white;
+    width: 100%;
+}
+
+.texto-video h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.texto-video div {
+    display: flex;
+    justify-content: center;
+    gap: 200px; /* SEPARACIÓN PC → JALISCO MÁS A LA DERECHA */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.texto-video a h2,
+.texto-video a h3 {
+    color: #FF1493;
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* =============================
+   CELULAR (0–480px)
+============================= */
+@media (max-width: 480px) {
+
+    .footer-content {
+        margin-bottom: 0;
+    }
+
+    .texto-video {
+        top: -10px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .texto-video h1 {
+        font-size: 1.7rem !important;
+        line-height: 1.1;
+        margin-bottom: 12px !important;
+    }
+
+    .texto-video div {
+        flex-direction: column !important;
+        gap: 15px !important;
+        margin-top: 0 !important;
+    }
+
+    .texto-video a {
+        font-size: 1.15rem !important;
+        font-weight: 700 !important;
+    }
+
+    .texto-video h2,
+    .texto-video h3 {
+        font-size: 1.05rem !important;
+    }
+}
+
+/* =============================
+   TABLET (481–768px)
+============================= */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .texto-video {
+        top: 10px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .texto-video h1 {
+        font-size: 2rem !important;
+        line-height: 1.1;
+    }
+
+    .texto-video div {
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 40px !important;
+    }
+
+    .texto-video a {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* =============================
+   COMPUTADORA (1025px+)
+============================= */
+@media (min-width: 1025px) {
+
+    .texto-video h1 {
+        text-align: center !important;
+        margin-left: 20px !important; /* Ajuste fino */
+    }
+
+    .texto-video div {
+        justify-content: center !important;
+        gap: 240px !important; /* ⭐ Ajusta aquí si quieres más o menos separación */
+    }
+}
+/* 🔥 Corregir color rosa del título en responsive */
+.texto-video h1 {
+    color: #FF1493 !important;   /* Rosa fuerte */
+}
+/* creo que esto no hace nada pero por si se requier aqui estara*/
+/* 
+.flip-card-back p {
+    max-height: 65px;        
+    overflow: hidden;        
+    text-overflow: ellipsis; 
+    padding: 0 10px;         
+    line-height: 1.3;        
+}
+*/
+
+/* Contenedor ES LA PARTE DE RAZONES DE INDEX */
+/* ================================
+   RAZONES (corregido sin conflictos)
+================================== */
+
+
+/* CODIGO PARA  ANUNCIOS INM24 */ 
+/* ========= CONTENEDOR GENERAL ========= */
+.inmuebles24 {
+    width: 100%;
+    padding: 40px 0;
+}
+
+/* ========= CONTENEDOR FLEX SEGURO ========= */
+.contenedor-inmuebles24 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ========= TARJETA (FLIP CARD) ========= */
+.flip-card {
+    background: transparent;
+    width: 300px;
+    height: 420px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* CARA FRONTAL */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.flip-card-front .info {
+    padding: 15px;
+    text-align: center;
+}
+
+.precio {
+    font-size: 18px;
+    color: #8a0135;
+    font-weight: bold;
+}
+
+/* CARA TRASERA */
+.flip-card-back {
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 25px;
+}
+
+/* BOTÓN */
+.btn-ver {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: #8a0135;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 768px) {
+    .flip-card {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+/* ===== ESPACIADO REAL Y SEGURO ENTRE TARJETAS ===== */
+
+/* separa cada tarjeta en TODAS las resoluciones */
+.inmuebles24 .flip-card {
+    margin: 20px !important;      /* separa entre tarjetas 👈 */
+    padding: 10px 0 !important;   /* da aire vertical */
+}
+
+/* separa las tarjetas cuando giran (espacio invisible alrededor) */
+.inmuebles24 .flip-card-inner {
+    padding: 10px !important;     /* evita que toquen al rotar */
+}
+
+/* evita que el giro empuje o aplaste la tarjeta */
+.inmuebles24 .flip-card-front,
+.inmuebles24 .flip-card-back {
+    box-sizing: border-box;
+    padding: 15px !important;
+}
+@media (max-width: 768px) {
+    .contenedor-inmuebles24 {
+        place-items: center !important; /* <-- CENTRAR TODO */
+    }
+}
+.inmuebles24 .flip-card-back p {
+    max-height: 4.8em;   /* Altura aproximada para 4 líneas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+/* TEXTO DEL LADO TRASERO — RESPONSIVE, CENTRADO Y SIN SCROLL */
+.inmuebles24 .flip-card-back p {
+    max-height: none !important;      /* deja crecer el texto SIN deformar */
+    overflow: visible !important;     /* elimina scroll */
+    text-align: center !important;    /* centra el texto SIEMPRE */
+    line-height: 1.4;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+
+/* RESPONSIVE – AJUSTA SOLO ESPACIADO, NO ALTURA DE TARJETA */
+@media (max-width: 768px) {
+    .inmuebles24 .flip-card-back p {
+        font-size: 0.95rem;           /* más compacto pero sin deformar */
+    }
+}
+
+@media (max-width: 480px) {
+    .inmuebles24 .flip-card-back p {
+        font-size: 0.90rem;           /* texto perfecto para celular */
+    }
+}
+/*ver si fruncina pero es para que no corte las tarjetas de razones  en responsve*/
+

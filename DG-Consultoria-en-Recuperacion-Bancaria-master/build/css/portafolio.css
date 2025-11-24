@@ -1,0 +1,1524 @@
+/* Ajustes generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    background: linear-gradient(to bottom, #f5e9df 95%, #580939 100%);
+    color: black;
+}
+
+
+/* Contenedor del nav en la parte inferior derecha */
+.nav-container {
+    position: absolute;
+    bottom: 10px; /* Ubicación en la parte inferior */
+    right: 10px; /* Alineación a la derecha */
+    transform: translateY(20px); /* Baja el contenedor 20px más */
+    z-index: 10; /* Asegura que esté encima del contenido */
+    padding: 15px; /* Espaciado interno */
+    display: flex;
+    justify-content: center; /* Centra el contenido */
+}
+
+/* Estilo del nav */
+.nav-container .desktop-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaciado entre enlaces */
+}
+
+/* Estilo de los enlaces */
+.nav-container .desktop-nav a {
+    text-decoration: none; /* Sin subrayado */
+    color: #FFFFFF; /* Texto blanco */
+    font-size: 17px; /* Tamaño de letra */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 8px; /* Esquinas redondeadas */
+    background: transparent; /* Fondo transparente */
+    border: none; /* Sin bordes */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transición suave */
+}
+
+/* Hover sobre los enlaces */
+.nav-container .desktop-nav a:hover {
+    background-color: rgba(255, 187, 54, 0.3); /* Fondo naranja translúcido al pasar el cursor */
+    color: #FFFFFF; /* Mantiene el texto blanco */
+}
+
+/* Header */
+header {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.header-content {
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 20vh;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+
+
+/* Navegación */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navegacion a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu {
+    background: linear-gradient(to bottom, 
+        rgba(124, 0, 76, 0.95) 0%,   /* Vino fuerte arriba */
+        rgba(100, 80, 100, 0.9) 50%, /* Transición suave */
+        rgba(70, 70, 70, 0.9) 100%   /* Gris oscuro metálico abajo */
+    );
+    backdrop-filter: blur(8px); /* Efecto vidrio suave */
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+}
+
+.navegacion a:hover {
+    background-color: #FFBB36;
+}
+
+/*INICIO DE SECTION  DE INFORMACION DE TODAS LAS SECCIONE EN LA  FLIPING
+/* --------------- */
+/* 1️⃣ ENCABEZADO */
+.encabezado {
+  display: flex;
+  justify-content: center;    /* Antes era space-between */
+  align-items: center;
+  gap: 40px;                   /* 🔥 Reduce distancia entre título e imagen */
+  padding: 80px 5%;
+  overflow: hidden;
+}
+
+/* Contenedores animados */
+.encabezado-texto,
+.encabezado-img {
+  animation: subir 1.1s ease-out forwards;
+}
+
+/* ⏱️ Repetir animación cada 3s con “float” suave */
+.encabezado-texto h1 {
+  font-size: 3.8rem;   /* Antes 4.6rem → 🔥 más pequeño */         /* Tamaño estilo "Despégate del resto" */
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #6dd66d, #0072ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: float 3s ease-in-out infinite;
+  text-shadow: 0px 3px 6px rgba(0,0,0,0.12);
+}
+.subtitulo-encabezado {
+ font-size: 3.2rem;   /* Antes 5rem → 🔥 más pequeño que el h1 */
+  margin-top: 20px;  
+  font-weight: 600;
+  color: #1f3b7c;
+ 
+  line-height: 1.2;
+  max-width: 1100px; 
+  animation: float 3s ease-in-out infinite;  /* 🔥 Mismo movimiento que el H1 */
+}
+
+/* Imagen con pequeño movimiento también */
+.encabezado-img img {
+  width: 380px;
+  animation: float-img 3.2s ease-in-out infinite;
+}
+
+/* Animación inicial */
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✨ Efecto de flotación suave para el título */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Efecto de flotación para la imagen */
+@keyframes float-img {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+  100% { transform: translateY(0); }
+}
+
+/* ----------- salud----------- */
+
+.estilo-azul {
+ 
+  padding: 100px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.estilo-azul .bienestar-texto {
+  width: 48%;
+  text-align: left;
+  color: #0A1A33;
+  font-family: 'Arial', sans-serif;
+}
+
+.titulo-azul {
+  color: #0067C8;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 0.9;
+}
+.titulo-mixto {
+  font-size: 60px;
+  font-weight: 500;
+  color: #071c3b; /* negro */
+  margin: 0;
+  line-height: 1.1;
+}
+
+.titulo-azul {
+  color: #0074E8; /* azul */
+  font-weight: 800;
+  display: block;    /* 🔥 ESTO lo baja a una línea aparte */
+  margin-bottom: 5px; /* espacio entre azul y negro */
+  line-height: 1;
+}
+
+.estilo-azul h2 {
+  font-size: 65px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.subtexto {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.numero {
+  font-size: 50px;
+  color: #0067C8;
+  font-weight: 700;
+  margin: 10px 0 20px 0;
+}
+
+.descripcion {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn-asesor {
+  background: linear-gradient(90deg, #7ED957, #0A66C2);
+  color: white;
+  padding: 15px 40px;
+  border-radius: 12px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn-asesor:hover {
+  transform: scale(1.05);
+}
+
+.estilo-azul .bienestar-img {
+  width: 48%;
+}
+
+.estilo-azul .bienestar-img img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.nota {
+  font-size: 12px;
+  margin-top: 20px;
+  color: #4A5A70;
+}
+
+/* ----------------------------- */
+/* 2️⃣ BIENESTAR FINANCIERO       */
+/* ----------------------------- */
+
+.bienestar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 5%;
+  position: relative;
+}
+
+.bienestar-texto, .bienestar-img {
+  width: 48%;
+  transition: all 1s ease;
+}
+
+.bienestar-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ============================
+   SECCIÓN ¿CÓMO FUNCIONA?
+/* ============================== */
+
+.como-funciona {
+  background: #0f1b33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 30px;
+  gap: 60px;
+  color: #fff;
+  position: relative;
+}
+
+/* Imagen lateral (ESCRITORIO) */
+.cf-img img {
+  width: 460px;
+  max-width: 100%;
+}
+
+/* Contenedor textos/pasos */
+.cf-pasos {
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Título principal */
+.cf-titulo {
+  font-size: 46px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Subtítulo */
+.cf-subtitulo {
+  font-size: 20px;
+  line-height: 1.5;
+  opacity: .95;
+  margin-bottom: 45px;
+  color: #fff;
+}
+.intro {
+  color: #fff;
+}
+
+/* ------------------------------ */
+/*   NAVEGACIÓN (flechas + paso) */
+/* ------------------------------ */
+
+.cf-navegacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* FLECHAS EXACTAS AL DISEÑO */
+.flecha-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(0, 169, 255, 0.22);
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.2s ease;
+}
+.flecha-btn {
+  background: none !important;
+}
+
+.flecha-izq {
+  background-image: url('build/img/flecha-izq.png');
+}
+
+.flecha-der {
+  background-image: url('build/img/flecha-der.png');
+}
+
+.flecha-btn:hover {
+  background: rgba(0, 169, 255, 0.40);
+}
+
+/* ------------------------------ */
+/*     FORMATO DEL PASO ACTUAL     */
+/* ------------------------------ */
+
+.paso {
+  width: 480px;
+}
+
+.paso-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cuadro del número */
+.paso-numero {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+/* Colores según número */
+.paso-numero[data-n="1"],
+.paso-numero:nth-child(1) { background: #4d8df9; }   /* Azul medio */
+
+.paso-numero[data-n="2"] { background: #5fc8f8; }    /* Azul claro */
+
+.paso-numero[data-n="3"] { background: #76d852; }    /* Verde */
+
+.paso-numero[data-n="4"] { background: #4d8df9; }
+
+.paso-numero[data-n="5"] { background: #76d852; }
+
+/* Título paso */
+.paso-titulo {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Texto del paso */
+.paso-descripcion {
+  font-size: 19px;
+  line-height: 1.45;
+  color: #fff;
+}
+
+/* Botón */
+.btn-transparente {
+  margin-top: 20px;
+  padding: 18px 48px;
+  background: linear-gradient(90deg, #5fd35e, #2e8bf1);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+/* ============================== */
+/*           RESPONSIVE           */
+/* ============================== */
+
+@media (max-width: 900px) {
+  .como-funciona {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  /* Ocultar imagen lateral */
+  .cf-img {
+    display: none;
+  }
+
+  /* Flechas más chicas y más juntas */
+  .flecha-btn {
+    width: 40px;
+    height: 40px;
+    background-size: 52%;
+  }
+
+  .cf-navegacion {
+    gap: 15px;
+  }
+
+  /* Paso centrado */
+  .paso {
+    width: 100%;
+  }
+
+  /* Número */
+  .paso-numero {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  /* Títulos */
+  .cf-titulo {
+    font-size: 36px;
+  }
+
+  .cf-subtitulo {
+    font-size: 18px;
+  }
+}
+
+
+/* CONTENEDOR GENERAL LA TABLA FINAL
+ */
+.esq-table {
+  width: 100%;
+  max-width: 750px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 22px;
+  border: 2px solid #0e1b3d;
+  padding: 40px 50px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.esq-caption {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  background: linear-gradient(90deg, #7ED957, #0A66C2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+/* FILAS */
+.esq-table tr {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.esq-table tr:last-child {
+  border-bottom: none;
+}
+
+/* TITULOS DE FILA */
+.esq-table th {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0e1b3d;
+}
+
+/* VALORES */
+.esq-table td {
+  text-align: right;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0e1b3d;
+}
+
+/* 🎨 BOTONES DE ACCIÓN CON DEGRADADO (MISMO ESTILO QUE "Ver Detalles") */
+/* CONTENEDOR DE LOS BOTONES */
+.esq-actions {
+  max-width: 750px;
+  margin: 40px auto 80px; /* ← separación extra del footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ← centra los botones */
+  gap: 12px;
+}
+
+/* ESTILO GENERAL DEL BOTÓN */
+.esq-actions .btn {
+  width: 220px;            /* ← MISMO ANCHO QUE TUS BOTONES VERDES-AZULES */
+  padding: 12px 0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: 0.3s ease;
+  color: white;
+  border: none;
+  background: linear-gradient(90deg, #7ED957, #0A66C2); /* ← COLOR ESTÁNDAR */
+}
+
+/* HOVER */
+.esq-actions .btn:hover {
+  transform: scale(1.05);
+}
+
+/*solo afeca a la talba de seguros+/
+/* 🔵 Contenedor general */
+.tabla-seguros .esq-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 18px; /* separación entre filas */
+}
+
+/* 🔵 Estilo general de las filas */
+.tabla-seguros tr {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 🔵 Redondear esquinas de cada fila */
+.tabla-seguros tr th:first-child {
+    border-radius: 12px 0 0 12px;
+}
+.tabla-seguros tr td:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+/* 🔵 Títulos (th) */
+.tabla-seguros th {
+    padding: 18px 22px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+    color: #1A2E57;
+    background: #F5F8FE;
+    width: 30%;
+}
+
+/* 🔵 Descripciones (td) */
+.tabla-seguros td {
+    padding: 18px 22px;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* 🔵 Título de la tabla */
+.tabla-seguros .esq-caption {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    color: #2E8B57;
+    margin-bottom: 35px;
+}
+
+
+/*seccion de logo de banco en el html de hipotecario*/
+/* SECCIÓN DESTACADA */
+.seccion-destacada {
+  width: 100%;
+  text-align: center;
+  padding: 0px 0;        /* 🔥 Ahora SIN espacio arriba */
+  margin-top: -40px;     /* 🔥 SUBE TODO sin afectar otras secciones */
+  animation: fadeInSlide 1.2s ease forwards;
+}
+
+/* IMAGEN CENTRADA Y AMPLIA */
+.destacada-img img {
+  width: 55%;
+  max-width: 780px;
+  display: block;
+  margin: 0 auto;
+  margin-top: -20px;
+
+  /* 🔥 CORRECCIÓN REAL */
+  display: block;
+  padding: 0 !important;
+  margin-bottom: -60px !important; /* 🔥 Empuja la imagen hacia arriba */
+}
+
+/* BOTÓN CENTRADO — PEGADÍSIMO */
+.destacada-btn {
+  margin-top: -40px;   /* 🔥 SUBE el botón debajo del logo */
+  display: flex;
+  justify-content: center;
+}
+
+.destacada-btn .btn-asesor {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* ANIMACIÓN DE ENTRADA */
+@keyframes fadeInSlide {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* PARPADEO SUAVE (más visible) */
+@keyframes pulsoSuave {
+  0% { opacity: 1; }
+  50% { opacity: 0.55; }
+  100% { opacity: 1; }
+}
+
+/* MOVIMIENTO FLUIDO */
+@keyframes flotacion {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+/* --------------------------- */
+/* 📱 RESPONSIVE MOBILE        */
+/* --------------------------- */
+@media (max-width: 768px) {
+
+  .seccion-destacada {
+    margin-top: -30px;   /* 🔥 También sube en tablet */
+  }
+
+  .destacada-img img {
+    width: 80%;
+    margin-top: -10px;
+  }
+
+  .destacada-btn {
+    margin-top: 10px;
+  }
+
+  .destacada-btn .btn-asesor {
+    width: 75%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .seccion-destacada {
+    margin-top: -20px;
+  }
+
+  .destacada-img img {
+    width: 92%;
+  }
+
+  .destacada-btn .btn-asesor {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 18px;
+  }
+}
+
+
+/* Menú Móvil */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(13, 32, 59, 0.95);
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu .close-icon {
+    font-size: 20px;
+    align-self: flex-end;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header .menu-icon {
+        display: block;
+    }
+
+    header .desktop-nav {
+        display: none;
+    }
+
+    .nav-container {
+        display: none;
+    }
+
+    .header-content {
+        align-items: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .navegacion {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navegacion a {
+        width: 80%;
+        text-align: center;
+    }
+}
+footer {
+    background-color: transparent;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+}
+
+footer .navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+footer .navegacion a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+footer .navegacion a:hover {
+    background-color: rgba(255, 187, 54, 0.3);
+    color: #FFFFFF;
+}
+
+/* Responsive Video */
+.footer-content {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.footer-content video {
+    width: 100%;
+    height: auto; /* Mantiene la proporción del video */
+    max-height: 50vh; /* Limita la altura del video al 80% de la altura de la ventana */
+    object-fit: cover;
+}
+.algo {
+    color: #ff4fb7 !important; /* rosa fuerte */
+    font-weight: 700;          /* mantiene lo grueso */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    footer .navegacion {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center; /* Centra las pestañas de navegación */
+    }
+
+    footer .navegacion a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    /* Ajusta el margen debajo del video para evitar solapamiento */
+    .footer-content {
+        margin-bottom: 0;
+    }
+}
+
+/* Estilo del botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px; /* Espaciado desde abajo */
+    right: 100px; /* Ajuste de posición para evitar superposición */
+    z-index: 1001; /* Asegurar que esté sobre otros elementos */
+    width: 60px; /* Tamaño del botón */
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%; /* Forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: float-whatsapp 2s infinite;
+    cursor: pointer;
+}
+
+/* Ícono de WhatsApp */
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Animación flotante específica de WhatsApp */
+@keyframes float-whatsapp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Botón flotante del formulario */
+.formulario-float {
+    position: fixed;
+    bottom: 20px;
+    right: 90px; /* Ajuste para evitar superposición */
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: float-formulario 2s infinite;
+    cursor: pointer;
+}
+
+/* Ícono del formulario */
+.formulario-float img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Animación flotante específica del formulario */
+@keyframes float-formulario {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Botón flotante para llamadas */
+.llamar-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Ajuste de posición */
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: float-llamar 2s infinite;
+    cursor: pointer;
+}
+
+/* Ícono de llamada */
+.llamar-float img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Animación flotante específica para llamada */
+@keyframes float-llamar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.navegacion-float {
+    position: fixed;
+    bottom: 20px; /* Ajusta según tu diseño */
+    padding: 10px;
+    background-color: #ede2d8; /* Fondo azul */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 9999;
+}
+
+.navegacion-float img {
+    width: 24px;
+    height: 24px;
+}
+
+.atras-float {
+   left: 80px; /* Posición a la izquierda del botón principal */
+}
+
+.adelante-float {
+   left: 20px; /* Posición a la derecha */
+}
+
+.navegacion-float:hover {
+    background-color: #ede2d8; /* Azul más oscuro en hover */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* 🎨 Fondo general y estilo base */
+
+/* -------------------------------------------------------------
+   🔹 Este bloque define el diseño visual del fondo principal,
+   incluyendo el degradado beige → magenta y la imagen SVG.
+   Se aplica desde la parte superior hasta el footer de la página.
+-------------------------------------------------------------- */
+/* 🔸 Estilo del título principal */
+h1 {
+    color: black; 
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    font-size: 2.4rem; /* Aumentado desde el tamaño por defecto */
+    font-weight: 800;  /* Más grueso para resaltar */
+    letter-spacing: 0.5px; /* Separación sutil entre letras */
+    margin-bottom: 25px; /* Espacio debajo del título */
+    text-align: center; /* Centrado visualmente */
+}
+p {
+     color: black; }
+
+   .boton-mas-info {
+    display: block; /* bloque para poder centrar con margin auto */
+    margin: 0 auto 20px auto; /* centra horizontalmente y margen inferior */
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.3rem; /* tamaño adecuado */
+    text-decoration: none;
+    padding: 6px 18px; /* compacto */
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c004c 0%, #a20066 100%);
+    box-shadow: 0 3px 10px rgba(162, 0, 102, 0.4);
+    border: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Hover */
+.boton-mas-info:hover {
+    background: linear-gradient(135deg, #a20066 0%, #7c004c 100%);
+    transform: scale(1.05); /* leve aumento */
+    box-shadow: 0 5px 14px rgba(162, 0, 102, 0.5);
+}
+
+/* Tarjeta */
+.tarjeta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    gap: 20px; /* Espacio entre imagen y contenido */
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta .imagen {
+    flex: 1;
+}
+
+.tarjeta .imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta .imagen img:hover {
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido de la tarjeta */
+.tarjeta .contenido {
+    flex: 2;
+    text-align: center; /* Centra títulos, texto y botón */
+    display: flex;
+    flex-direction: column; /* Apila verticalmente */
+    justify-content: center;
+    gap: 10px; /* Espacio entre título, texto y botón */
+}
+
+/* Título y párrafo */
+.tarjeta h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #212529;
+}
+
+.tarjeta p {
+    font-size: 1.3rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Botón */
+.tarjeta a.boton-mas-info {
+    display: inline-block; /* Solo ocupa lo que necesita */
+    padding: 6px 18px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c004c 0%, #a20066 100%);
+    box-shadow: 0 3px 10px rgba(162, 0, 102, 0.4);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.tarjeta a.boton-mas-info:hover {
+    background: linear-gradient(135deg, #a20066 0%, #7c004c 100%);
+    transform: scale(1.05);
+    box-shadow: 0 5px 14px rgba(162, 0, 102, 0.5);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .tarjeta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tarjeta .contenido {
+        margin-left: 0;
+    }
+}
+footer-content {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.footer-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-video {
+    position: absolute;
+    top: 20px;             /* Casi arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+    color: white;
+}
+
+.texto-video h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+.texto-video div {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; /* Antes era 70-90% */
+    max-width: 100%; /* Para que ocupe todo el espacio del video */
+    margin: 0 auto;
+    padding: 0 40px; /* Empuja un poco hacia los bordes */
+}
+
+.texto-video a h2 {
+    color: #FF1493; /* Vino */
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
+}
+
+.texto-video a h3 {
+    color: #FF1493; /* Rosa fuerte */
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+.texto-video div {
+    display: flex;
+    justify-content: center; /* centra el grupo */
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.texto-video a:first-child {
+    position: relative;
+    left: -280px; /* mueve CDMX más a la izquierda */
+}
+
+.texto-video a:last-child {
+    position: relative;
+    right: -280px; /* mueve Jalisco más a la derecha */
+}
+ /* este ajsuta el cdmx y jalisco dentro del video del final*/
+ @media (max-width: 480px) {
+
+    .texto-video {
+        top: 10px;
+        transform: translateX(-50%);
+    }
+
+    .texto-video h1 {
+        font-size: 1.2rem;
+    }
+
+    .texto-video div {
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* Quita el desplazamiento que los saca del video */
+    .texto-video a:first-child,
+    .texto-video a:last-child {
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    .texto-video h2,
+    .texto-video h3 {
+        font-size: 0.9rem !important;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) and (min-width: 481px) {
+
+    .texto-video {
+        top: 15px;
+        transform: translateX(-50%);
+    }
+
+    .texto-video h1 {
+        font-size: 1.8rem;
+    }
+
+    .texto-video div {
+        justify-content: space-around;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    /* Quita los -280px que los expulsan fuera */
+    .texto-video a:first-child,
+    .texto-video a:last-child {
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    .texto-video h2,
+    .texto-video h3 {
+        font-size: 1.4rem !important;
+    }
+}
+/* ================================
+   📱 RESPONSIVE 1 — ENCABEZADO
+================================ */
+@media (max-width: 1024px) {
+  .encabezado {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+    padding: 60px 5%;
+  }
+
+  .encabezado-texto h1 {
+    font-size: 3.6rem;
+  }
+
+  .subtitulo-encabezado {
+    font-size: 4rem;
+    max-width: 100%;
+  }
+
+  .encabezado-img img {
+    width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .encabezado-texto h1 {
+    font-size: 3rem;
+  }
+
+  .subtitulo-encabezado {
+    font-size: 3.2rem;
+  }
+
+  .encabezado-img img {
+    width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .encabezado-texto h1 {
+    font-size: 2.4rem;
+  }
+
+  .subtitulo-encabezado {
+    font-size: 2.4rem;
+  }
+
+  .encabezado-img img {
+    width: 220px;
+  }
+}
+
+
+
+/* ================================
+   📱 RESPONSIVE 2 — SALUD / ESTILO AZUL
+================================ */
+@media (max-width: 1024px) {
+  .estilo-azul {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .estilo-azul .bienestar-texto,
+  .estilo-azul .bienestar-img {
+    width: 100%;
+  }
+
+  .titulo-azul {
+    font-size: 60px;
+  }
+
+  .estilo-azul h2 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo-azul {
+    font-size: 45px;
+  }
+
+  .estilo-azul h2 {
+    font-size: 36px;
+  }
+
+  .numero {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-azul {
+    font-size: 36px;
+  }
+
+  .estilo-azul h2 {
+    font-size: 30px;
+  }
+
+  .btn-asesor {
+    width: 100%;
+    font-size: 18px;
+    padding: 14px 0;
+  }
+}
+
+
+
+/* ================================
+   📱 RESPONSIVE 3 — BIENESTAR FINANCIERO
+================================ */
+@media (max-width: 1024px) {
+  .bienestar {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .bienestar-texto,
+  .bienestar-img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bienestar-texto h2 {
+    font-size: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .bienestar-texto h2 {
+    font-size: 32px !important;
+  }
+}
+
+
+
+/* ================================
+   📱 RESPONSIVE 4 — CÓMO FUNCIONA
+================================ */
+
+@media (max-width: 900px) {
+  .como-funciona {
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+    padding: 40px 5%;
+  }
+
+  .cf-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cf-img img {
+    width: 85%;
+    max-width: 380px;
+    height: auto;
+  }
+
+  .cf-pasos {
+    width: 100%;
+    align-items: center;
+  }
+
+  .paso .texto {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cf-img img {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .paso .numero {
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+  }
+
+  .paso .titulo {
+    font-size: 22px;
+  }
+
+  .paso .texto {
+    font-size: 16px;
+  }
+
+  .btn-transparente {
+    width: 100% !important;
+    height: 46px;
+    font-size: 15px;
+  }
+}
+
+/* ======== FLECHAS DEL SLIDER — AJUSTADAS ======== */
+.cf-navegacion {
+  position: relative;
+  overflow: visible;
+}
+
+/* Botones */
+.flecha-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: #0a1a3c;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+  border: none;
+}
+
+/* Flecha izquierda MÁS ADENTRO */
+.flecha-izq {
+  left: 15px;
+}
+
+/* Flecha derecha MÁS ADENTRO */
+.flecha-der {
+  right: 15px;
+}
+
+
+/* ================================
+   📱 RESPONSIVE 5 — TABLA FINAL (ARREGLADO)
+================================ */
+@media (max-width: 900px) {
+  .esq-table {
+    padding: 30px;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 600px) {
+  .esq-table {
+    padding: 22px;
+  }
+
+  .esq-table tr {
+    display: block;          /* NO FLEX en celular */
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .esq-table th {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+
+  .esq-table td {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+}
