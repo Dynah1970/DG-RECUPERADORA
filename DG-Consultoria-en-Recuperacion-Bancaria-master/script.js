@@ -1,3 +1,4 @@
+console.log("JS CARGADO ✔");
 document.addEventListener("DOMContentLoaded", function () {
     // Habilitar las pestañas de navegación
     const tabs = document.querySelectorAll('nav ul li');
@@ -431,4 +432,7 @@ iniciarAuto();
 /* ============================
    🔵 REMATES – CARRUSEL ROTATIVO
    (misma estructura que "cómo funciona")
+=============================== */
+/* ============================
+   🔵 REMATES – CARRUSEL ROTATIVO
 =============================== */

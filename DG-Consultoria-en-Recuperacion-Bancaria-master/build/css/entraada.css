@@ -537,168 +537,200 @@ body {
 /* =============================
    GENERAL FOOTER STYLES
 ============================= */
-footer {
-    background-color: transparent;
-    text-align: center;
-    color: #FFFFFF;
+/*seccion arriba del footer*/
+.seccion-video {
     position: relative;
+    width: 100%;
+    height: 45vh; /* ⭐ AJUSTA EL TAMAÑO DEL VIDEO: pon 35vh, 40vh, 50vh según lo que quieras */
+    overflow: hidden;
 }
 
+.seccion-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.seccion-video {
+    position: relative;
+    width: 100%;
+    height: 45vh; /* ⭐ AJUSTA EL TAMAÑO DEL VIDEO: pon 35vh, 40vh, 50vh según lo que quieras */
+    overflow: hidden;
+}
+
+.seccion-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.texto-video {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.texto-video h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+    color: #FF1493;
+}
+
+.links-oficinas {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+.links-oficinas a h2,
+.links-oficinas a h3 {
+    color: #FF1493 !important;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+/* =======================================
+   RESPONSIVE — SECCIÓN VIDEO + TEXTOS
+======================================= */
+
+/* 📱 CELULAR (0–480px) */
+@media (max-width: 480px) {
+
+    .seccion-video {
+        height: 30vh; /* Más pequeño para cel */
+    }
+
+    .texto-video h1 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .links-oficinas {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .links-oficinas a h2,
+    .links-oficinas a h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* 📱 TABLET (481–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .seccion-video {
+        height: 35vh;
+    }
+
+    .texto-video h1 {
+        font-size: 2.2rem;
+    }
+
+    .links-oficinas {
+        gap: 60px;
+    }
+
+    .links-oficinas a h2,
+    .links-oficinas a h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* 🖥️ LAPTOP / PC (769–1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .seccion-video {
+        height: 40vh;
+    }
+
+    .texto-video h1 {
+        font-size: 2.6rem;
+    }
+
+    .links-oficinas {
+        gap: 150px;
+    }
+}
+
+
+footer {
+   background: linear-gradient(
+        to bottom,
+        #2A2A2D,   /* gris profundo */
+        #5A0033    /* guinda oscuro */
+    );
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+}
 footer .navegacion {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 10px 0;
+    padding-bottom: 10px;
 }
 
 footer .navegacion a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 1rem;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-
-footer .navegacion a:hover {
-    background-color: rgba(255, 187, 54, 0.3);
-}
-
-/* =============================
-   VIDEO RESPONSIVE
-============================= */
-.footer-content {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-}
-
-.footer-content video {
-    width: 100%;
-    height: auto;
-    max-height: 50vh;
-    object-fit: cover;
-}
-
-/* =============================
-   TEXTO SOBRE EL VIDEO
-============================= */
-.texto-video {
-    position: absolute;
-    top: 20px;
-    left: 50% !important;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 3;
     color: white;
-    width: 100%;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
-.texto-video h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+footer .correo {
+    display: block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
 }
+/* =======================================
+   RESPONSIVE — FOOTER
+======================================= */
 
-.texto-video div {
-    display: flex;
-    justify-content: center;
-    gap: 200px; /* SEPARACIÓN PC → JALISCO MÁS A LA DERECHA */
-    width: 100%;
-    margin: 0 auto;
-}
-
-.texto-video a h2,
-.texto-video a h3 {
-    color: #FF1493;
-    font-size: 2rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-}
-
-/* =============================
-   CELULAR (0–480px)
-============================= */
+/* 📱 CELULAR (0–480px) */
 @media (max-width: 480px) {
 
-    .footer-content {
-        margin-bottom: 0;
+    footer {
+        padding: 15px 0;
     }
 
-    .texto-video {
-        top: -10px !important;
-        width: 100% !important;
-        text-align: center !important;
+    footer .navegacion {
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .texto-video h1 {
-        font-size: 1.7rem !important;
-        line-height: 1.1;
-        margin-bottom: 12px !important;
+    footer .navegacion a {
+        font-size: 1rem;
     }
 
-    .texto-video div {
-        flex-direction: column !important;
-        gap: 15px !important;
-        margin-top: 0 !important;
-    }
-
-    .texto-video a {
-        font-size: 1.15rem !important;
-        font-weight: 700 !important;
-    }
-
-    .texto-video h2,
-    .texto-video h3 {
-        font-size: 1.05rem !important;
+    footer .correo {
+        font-size: 1rem;
     }
 }
 
-/* =============================
-   TABLET (481–768px)
-============================= */
+/* 📱 TABLET (481–768px) */
 @media (min-width: 481px) and (max-width: 768px) {
 
-    .texto-video {
-        top: 10px !important;
-        width: 100% !important;
-        text-align: center !important;
+    footer .navegacion {
+        gap: 15px;
     }
 
-    .texto-video h1 {
-        font-size: 2rem !important;
-        line-height: 1.1;
+    footer .navegacion a {
+        font-size: 1.05rem;
     }
 
-    .texto-video div {
-        flex-direction: row !important;
-        justify-content: center !important;
-        gap: 40px !important;
-    }
-
-    .texto-video a {
-        font-size: 1.2rem !important;
+    footer .correo {
+        font-size: 1.05rem;
     }
 }
 
-/* =============================
-   COMPUTADORA (1025px+)
-============================= */
-@media (min-width: 1025px) {
+/* 🖥️ LAPTOP (769–1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
 
-    .texto-video h1 {
-        text-align: center !important;
-        margin-left: 20px !important; /* Ajuste fino */
-    }
-
-    .texto-video div {
-        justify-content: center !important;
-        gap: 240px !important; /* ⭐ Ajusta aquí si quieres más o menos separación */
+    footer .navegacion a {
+        font-size: 1.1rem;
     }
 }
-/* 🔥 Corregir color rosa del título en responsive */
-.texto-video h1 {
-    color: #FF1493 !important;   /* Rosa fuerte */
-}
-
